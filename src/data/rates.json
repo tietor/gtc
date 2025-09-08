@@ -1,0 +1,86 @@
+[
+  {
+    "currency": "CHF",
+    "rates": [
+      {
+        "to": "CHF",
+        "value": 1.00000000
+      },
+      {
+        "to": "EUR",
+        "value": 1.01019620
+      },
+      {
+        "to": "USD",
+        "value": 1.08160580
+      },
+      {
+        "to": "GBP",
+        "value": 0.89400415
+      }
+    ]
+  },
+  {
+    "currency": "EUR",
+    "rates": [
+      {
+        "to": "CHF",
+        "value": 0.98990673
+      },
+      {
+        "to": "EUR",
+        "value": 1.00000000
+      },
+      {
+        "to": "USD",
+        "value": 1.07068890
+      },
+      {
+        "to": "GBP",
+        "value": 0.88498073
+      }
+    ]
+  },
+  {
+    "currency": "USD",
+    "rates": [
+      {
+        "to": "CHF",
+        "value": 0.92455124
+      },
+      {
+        "to": "EUR",
+        "value": 0.93397813
+      },
+      {
+        "to": "USD",
+        "value": 1.00000000
+      },
+      {
+        "to": "GBP",
+        "value": 0.82655265
+      }
+    ]
+  },
+  {
+    "currency": "GBP",
+    "rates": [
+      {
+        "to": "CHF",
+        "value": 1.11856310
+      },
+      {
+        "to": "EUR",
+        "value": 1.12996810
+      },
+      {
+        "to": "USD",
+        "value": 1.20984430
+      },
+      {
+        "to": "GBP",
+        "value": 1.00000000
+      }
+    ]
+  }
+]

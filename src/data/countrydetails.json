@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Austria",
+    "officialName": "Republic of Austria",
+    "capitalCity": "Wien",
+    "largestCity": "Wien",
+    "callingCode": "+43",
+    "area": {
+      "number": 83858,
+      "rank": 113
+    },
+    "population": {
+      "number": 9090868,
+      "rank": 98
+    },
+    "shortName": "AT",
+    "topLevelDomain": ".at",
+    "currency": {
+      "name": "Euro",
+      "code": "EUR"
+    }
+  },
+  {
+    "name": "Belgium",
+    "officialName": "Kingdom of Belgium",
+    "capitalCity": "Bruxelles",
+    "largestCity": "Bruxelles",
+    "callingCode": "+32",
+    "area": {
+      "number": 30528,
+      "rank": 136
+    },
+    "population": {
+      "number": 11671737,
+      "rank": 82
+    },
+    "shortName": "BE",
+    "topLevelDomain": ".be",
+    "currency": {
+      "name": "Euro",
+      "code": "EUR"
+    }
+  },
+  {
+    "name": "Czechia",
+    "officialName": "Czech Republic",
+    "capitalCity": "Praha",
+    "largestCity": "Praha",
+    "callingCode": "+420",
+    "area": {
+      "number": 78871,
+      "rank": 115
+    },
+    "population": {
+      "number": 10525739,
+      "rank": 86
+    },
+    "shortName": "CZ",
+    "topLevelDomain": ".cz",
+    "currency": {
+      "name": "Czech Koruna",
+      "code": "CZK"
+    }
+  },
+  {
+    "name": "France",
+    "officialName": "French Republic",
+    "capitalCity": "Paris",
+    "largestCity": "Paris",
+    "callingCode": "+33",
+    "area": {
+      "number": 640679,
+      "rank": 42
+    },
+    "population": {
+      "number": 67975000,
+      "rank": 20
+    },
+    "shortName": "FR",
+    "topLevelDomain": ".fr",
+    "currency": {
+      "name": "Euro",
+      "code": "EUR"
+    }
+  },
+  {
+    "name": "Germany",
+    "officialName": "Federal Republic of Germany",
+    "capitalCity": "Berlin",
+    "largestCity": "Berlin",
+    "callingCode": "+49",
+    "area": {
+      "number": 357114,
+      "rank": 63
+    },
+    "population": {
+      "number": 84270625,
+      "rank": 19
+    },
+    "shortName": "DE",
+    "topLevelDomain": ".de, .eu",
+    "currency": {
+      "name": "Euro",
+      "code": "EUR"
+    }
+  },
+  {
+    "name": "Italy",
+    "officialName": "Italian Republic",
+    "capitalCity": "Roma",
+    "largestCity": "Roma",
+    "callingCode": "+39",
+    "area": {
+      "number": 301339,
+      "rank": 71
+    },
+    "population": {
+      "number": 58853482,
+      "rank": 25
+    },
+    "shortName": "IT",
+    "topLevelDomain": ".it",
+    "currency": {
+      "name": "Euro",
+      "code": "EUR"
+    }
+  },
+  {
+    "name": "Liechtenstein",
+    "officialName": "Principality of Liechtenstein",
+    "capitalCity": "Vaduz",
+    "largestCity": "Schaan",
+    "callingCode": "+423",
+    "area": {
+      "number": 160,
+      "rank": 190
+    },
+    "population": {
+      "number": 39444,
+      "rank": 188
+    },
+    "shortName": "LI",
+    "topLevelDomain": ".li",
+    "currency": {
+      "name": "Swiss Franc",
+      "code": "CHR"
+    }
+  },
+  {
+    "name": "Spain",
+    "officialName": "Kingdom of Spain",
+    "capitalCity": "Madrid",
+    "largestCity": "Madrid",
+    "callingCode": "+34",
+    "area": {
+      "number": 505992,
+      "rank": 51
+    },
+    "population": {
+      "number": 47615034,
+      "rank": 29
+    },
+    "shortName": "ES",
+    "topLevelDomain": ".es",
+    "currency": {
+      "name": "Euro",
+      "code": "EUR"
+    }
+  },
+  {
+    "name": "Sweden",
+    "officialName": "Kingdom of Sweden",
+    "capitalCity": "Stockholm",
+    "largestCity": "Stockholm",
+    "callingCode": "+46",
+    "area": {
+      "number": 450295,
+      "rank": 55
+    },
+    "population": {
+      "number": 10514692,
+      "rank": 87
+    },
+    "shortName": "SE",
+    "topLevelDomain": ".se",
+    "currency": {
+      "name": "Swedish Krona",
+      "code": "SEK"
+    }
+  },
+  {
+    "name": "Switzerland",
+    "officialName": "Swiss Confederation",
+    "capitalCity": "Bern",
+    "largestCity": "Zürich",
+    "callingCode": "+41",
+    "area": {
+      "number": 41284,
+      "rank": 132
+    },
+    "population": {
+      "number": 8789726,
+      "rank": 99
+    },
+    "shortName": "CH",
+    "topLevelDomain": ".ch, .swiss",
+    "currency": {
+      "name": "Swiss Franc",
+      "code": "CHF"
+    }
+  },
+  {
+    "name": "Turkey",
+    "officialName": "Republic of Turkey",
+    "capitalCity": "Ankara",
+    "largestCity": "Istanbul",
+    "callingCode": "+90",
+    "area": {
+      "number": 783562,
+      "rank": 36
+    },
+    "population": {
+      "number": 84680273,
+      "rank": 18
+    },
+    "shortName": "TR",
+    "topLevelDomain": ".tr",
+    "currency": {
+      "name": "Turkish Lira",
+      "code": "TRY"
+    }
+  },
+  {
+    "name": "United Kingdom",
+    "officialName": "United Kingdom of Great Britain and Northern Ireland",
+    "capitalCity": "London",
+    "largestCity": "London",
+    "callingCode": "+44",
+    "area": {
+      "number": 242495,
+      "rank": 78
+    },
+    "population": {
+      "number": 67026292,
+      "rank": 21
+    },
+    "shortName": "GB",
+    "topLevelDomain": ".uk",
+    "currency": {
+      "name": "Pound Sterling",
+      "code": "GBP"
+    }
+  },
+  {
+    "name": "United States",
+    "officialName": "United States of America",
+    "capitalCity": "Washington, D.C",
+    "largestCity": "New York City",
+    "callingCode": "+1",
+    "area": {
+      "number": 9525067,
+      "rank": 4
+    },
+    "population": {
+      "number": 334233854,
+      "rank": 3
+    },
+    "shortName": "US",
+    "topLevelDomain": ".us",
+    "currency": {
+      "name": "United States Dollar",
+      "code": "USD"
+    }
+  },
+  {
+    "name": "Vatican City",
+    "officialName": "Vatican City State",
+    "capitalCity": "Vatican City",
+    "largestCity": "Vatican City",
+    "callingCode": "+379",
+    "area": {
+      "number": 0,
+      "rank": 195
+    },
+    "population": {
+      "number": 825,
+      "rank": 195
+    },
+    "shortName": "VA",
+    "topLevelDomain": ".va",
+    "currency": {
+      "name": "Euro",
+      "code": "EUR"
+    }
+  }
+]

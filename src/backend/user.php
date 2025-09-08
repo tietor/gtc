@@ -20,22 +20,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = file_get_contents("php://input");
     $json_data = json_decode($input);
     $username = $json_data->username;
+    $firstname = $json_data->firstname;
+    $lastname = $json_data->lastname;
     $password = $json_data->password;
     $connection = getConnection();
-    $insertUser = "INSERT INTO user (username, password) values ('" . $username . "', '" . $password . "');";
+    $insertUser = "INSERT INTO user (username, firstname, lastname, password) values ('" . $username . "', '" . $firstname . "', '" . $lastname . "',  '" . $password . "');";
     if ($connection->query($insertUser) === TRUE) {
         echo "Successful";
     } else {
         echo "Failed";
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET')  {
-	$username = $_GET['username'];
+    $username = $_GET['username'];
     $connection = getConnection();
     $selectUser = "SELECT password FROM user WHERE username = '" . $username . "';";
     $result = $connection->query($selectUser);
     $rowCount = mysqli_num_rows($result);
     if ($rowCount > 0) {
-		$row = $result->fetch_assoc();
+        $row = $result->fetch_assoc();
         echo $row['password'];
     } else {
         echo "Failed";

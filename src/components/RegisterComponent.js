@@ -4,13 +4,17 @@ import {Alert, Button, Form, FormGroup} from "react-bootstrap";
 function Register() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
     function registerUser() {
-        if (username.trim() !== '' && password.trim() !== '') {
+        if (username.trim() !== '' && password.trim() !== '' && firstname.trim() !== '' && lastname.trim() !== '') {
             const data = {
                 username: username,
+                firstname: firstname,
+                lastname: lastname,
                 password: password
             }
             fetch('http://localhost/backend-gtc/user.php', {
@@ -30,7 +34,7 @@ function Register() {
                 })
             })
         } else {
-            setError('Benutzername oder Passwort fehlen');
+            setError('Bitte alle Felder ausfüllen!');
             setSuccess('');
         }
     }
@@ -44,12 +48,28 @@ function Register() {
         setPassword(e.target.value);
     }
 
+    function handleChangeFirstname(e) {
+        setFirstname(e.target.value);
+    }
+
+    function handleChangeLastname(e) {
+        setLastname(e.target.value);
+    }
+
     return (<React.Fragment>
         <h1>Register</h1>
         <Form.Group className="mb-3" controlId="test">
             <p>Benutzername:</p>
             <Form.Control type="text" placeholder="Benutzername" value={username} onChange={handleChangeUsername}/>
         </Form.Group>
+        <FormGroup className="mb-3" controlId="hello">
+            <p>Vorname:</p>
+            <Form.Control type="text" placeholder="Vorname" value={firstname} onChange={handleChangeFirstname}/>
+        </FormGroup>
+        <FormGroup className="mb-3" controlId="hello">
+            <p>Nachname:</p>
+            <Form.Control type="text" placeholder="Vorname" value={lastname} onChange={handleChangeLastname}/>
+        </FormGroup>
         <FormGroup className="mb-3" controlId="hello">
             <p>Passwort:</p>
             <Form.Control type="password" placeholder="Passwort" value={password} onChange={handleChangePassword}/>

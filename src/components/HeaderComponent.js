@@ -35,8 +35,8 @@ function Header() {
                     <Nav.Link href="/gtc/home">Home</Nav.Link>
                     <Nav.Link href="/gtc/currencies">Currencies</Nav.Link>
                     <Nav.Link href="/gtc/rates">Rates</Nav.Link>
-                    <Nav.Link href="/gtc/calculator">Calculator</Nav.Link>
-                    <Nav.Link href="/gtc/calculations">Calculations</Nav.Link>
+                    {isLoggedIn && (<React.Fragment><Nav.Link href="/gtc/calculator">Calculator</Nav.Link>
+                        <Nav.Link href="/gtc/calculations">Calculations</Nav.Link></React.Fragment>)}
                     <NavDropdown title="Länder">
                         <NavDropdown.Item href="/gtc/countries/shortnamesort">Sortiert nach ISO 3166</NavDropdown.Item>
                         <NavDropdown.Item href="/gtc/countries/namesort">Sortiert nach Name</NavDropdown.Item>

@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Table} from "react-bootstrap";
-import currencyList from "../data/currencies.json";
 
 function Currencies() {
+    const [currencyList, setCurrencyList] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3005/countries', {
+            method: 'GET',
+        }).then(response => {
+            response.json().then(data => {
+                setCurrencyList(data);
+            })
+        });
+    }, []);
+
+
     return (<React.Fragment>
         <div>
             <h1>Currencies</h1>

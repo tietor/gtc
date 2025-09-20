@@ -1,66 +1,80 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router";
-import countryList from "./../data/countrydetails.json";
 import {Table} from "react-bootstrap";
 
 function CountryDetail() {
     const {countryCode} = useParams();
-    const country = countryList.find(country => country.shortName === countryCode);
+    const [countryDetail, setCountryDetail] = useState();
+
+
+    useEffect(() => {
+        console.log(countryCode);
+        fetch('http://localhost:3005/country/' + countryCode, {
+            method: 'GET',
+        }).then(response => {
+            response.json().then(data => {
+                console.log(data);
+                setCountryDetail(data);
+            })
+        });
+    }, [countryCode]);
+
+
     return (<React.Fragment>
-        <h1>Länderdetails {country.name}</h1>
+        <h1>Länderdetails {countryDetail?.name}</h1>
         <Table striped bordered hover>
             <tbody>
             <tr>
                 <td>Name:</td>
-                <td>{country.name}</td>
+                <td>{countryDetail?.name}</td>
             </tr>
             <tr>
                 <td>ISO 3166:</td>
-                <td>{country.shortName}</td>
+                <td>{countryDetail?.iso}</td>
             </tr>
             <tr>
                 <td>Offizieller Name:</td>
-                <td>{country.officialName}</td>
+                <td>{countryDetail?.official_name}</td>
             </tr>
             <tr>
                 <td>Hauptstadt:</td>
-                <td>{country.capitalCity}</td>
+                <td>{countryDetail?.capital_city}</td>
             </tr>
             <tr>
                 <td>Grösste Stadt:</td>
-                <td>{country.largestCity}</td>
+                <td>{countryDetail?.biggest_town}</td>
             </tr>
             <tr>
                 <td>Vorwahl:</td>
-                <td>{country.callingCode}</td>
+                <td>{countryDetail?.phone_prefix}</td>
             </tr>
             <tr>
                 <td>Fläche:</td>
-                <td>{country.area.number}</td>
+                <td>{countryDetail?.area}</td>
             </tr>
             <tr>
                 <td>Rang Fläche:</td>
-                <td>{country.area.rank}</td>
+                <td>{countryDetail?.rank_area}</td>
             </tr>
             <tr>
                 <td>Einwohner:</td>
-                <td>{country.population.number}</td>
+                <td>{countryDetail?.population}</td>
             </tr>
             <tr>
                 <td>Rang Anzahl Einwohner:</td>
-                <td>{country.population.rank}</td>
+                <td>{countryDetail?.rank_population}</td>
             </tr>
             <tr>
                 <td>Länderdomain:</td>
-                <td>{country.topLevelDomain}</td>
+                <td>{countryDetail?.domain}</td>
             </tr>
             <tr>
                 <td>Währung:</td>
-                <td>{country.currency.name}</td>
+                <td>{countryDetail?.currency}</td>
             </tr>
             <tr>
                 <td>Abkürzung Währung:</td>
-                <td>{country.currency.code}</td>
+                <td>{countryDetail?.abbreviation_currency}</td>
             </tr>
             </tbody>
         </Table>

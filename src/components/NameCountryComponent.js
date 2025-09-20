@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Table} from "react-bootstrap";
-import countryList from "../data/countrydetails.json";
 import {useNavigate} from "react-router";
 
 function NameCountry() {
     const navigation = useNavigate();
+    const [countryList, setCountryList] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3005/countriesByNameSort', {
+            method: 'GET',
+        }).then(response => {
+            response.json().then(data => {
+                setCountryList(data);
+            })
+        });
+    }, []);
+
+
     const handleRowClick = (shortName) => {
         navigation(`/gtc/country/${shortName}`);
     };
@@ -21,9 +33,9 @@ function NameCountry() {
             <tbody>
             {countryList.sort((a, b) => a.name.localeCompare(b.name)).map((country, index) => (
                 <tr key={index}
-                    onClick={() => handleRowClick(country.shortName)}>
+                    onClick={() => handleRowClick(country.name)}>
                     <td>{country.name}</td>
-                    <td>{country.officialName}</td>
+                    <td>{country.official_name}</td>
                 </tr>
             ))}
             </tbody>

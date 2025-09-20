@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Table} from "react-bootstrap";
-import countryList from "./../data/countrydetails.json";
 import {useNavigate} from "react-router";
 
-
-
-
-
 function ShortcutCountry() {
+    const [countryList, setCountryList] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3005/countriesByShortNameSort', {
+            method: 'GET',
+        }).then(response => {
+            response.json().then(data => {
+                setCountryList(data);
+            })
+        });
+    }, []);
+
     const navigation = useNavigate();
-    const handleRowClick = (shortName) => {
-        navigation(`/gtc/country/${shortName}`);
+    const handleRowClick = (iso) => {
+        navigation(`/gtc/country/${iso}`);
     };
 
     return (<React.Fragment>
@@ -23,10 +29,10 @@ function ShortcutCountry() {
             </tr>
             </thead>
             <tbody>
-            {countryList.sort((a, b) => a.shortName.localeCompare(b.shortName)).map((country, index) => (
+            {countryList.sort((a, b) => a.iso.localeCompare(b.iso)).map((country, index) => (
                 <tr key={index}
-                    onClick={() => handleRowClick(country.shortName)}>
-                    <td>{country.shortName}</td>
+                    onClick={() => handleRowClick(country.name)}>
+                    <td>{country.iso}</td>
                     <td>{country.name}</td>
                 </tr>
             ))}

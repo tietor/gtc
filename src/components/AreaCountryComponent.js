@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router";
 import {Table} from "react-bootstrap";
-import countryList from "../data/countrydetails.json";
 
 function AreaCountry() {
     const navigation = useNavigate();
+    const [countryList, setCountryList] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3005/countriesByAreaSort', {
+            method: 'GET',
+        }).then(response => {
+            response.json().then(data => {
+                setCountryList(data);
+            })
+        });
+    }, []);
     const handleRowClick = (shortName) => {
         navigation(`/gtc/country/${shortName}`);
     };
@@ -21,10 +30,10 @@ function AreaCountry() {
                 <tbody>
                 {countryList.sort((a, b) => b.area.number - a.area.number).map((country, index) => (
                     <tr key={index}
-                        onClick={() => handleRowClick(country.shortName)}>
+                        onClick={() => handleRowClick(country.name)}>
                         <td>{country.name}</td>
-                        <td>{country.area.number}</td>
-                        <td>{country.area.rank}</td>
+                        <td>{country.area}</td>
+                        <td>{country.rank_area}</td>
                     </tr>
                 ))}
 

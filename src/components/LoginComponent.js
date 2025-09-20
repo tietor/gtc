@@ -17,19 +17,19 @@ function Login() {
 
     function loginUser() {
         if (username.trim() !== '' && password.trim() !== '') {
-            fetch('http://localhost/backend-gtc/user.php?username=' + username, {
+            fetch('http://localhost:3005/login/' + username, {
                 method: 'GET',
             }).then(response => {
                 response.text().then(text => {
-                    if (text === 'Failed') {
-                        setError('Login fehlgeschlagen. Versuche es später nochmals.');
+                    console.log('hello world')
+                    console.log(text === password)
+                    console.log(text);
+                    console.log(password);
+                    if (text === password) {
+                        localStorage.setItem('username', username);
+                        window.location.href = '/gtc/home';
                     } else {
-                        if (text === password) {
-                            localStorage.setItem('username', username);
-                            window.location.href = '/gtc/home';
-                        } else {
-                            setError('Benutzername oder Passwort falsch.')
-                        }
+                        setError('Benutzername oder Passwort falsch.')
                     }
                 })
             })

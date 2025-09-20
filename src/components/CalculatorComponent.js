@@ -17,8 +17,6 @@ function Calculator() {
             const currencyRate = currencyRates.filter(rate => rate.currency === fromCurrency)[0].rates.filter(goalRate => goalRate.to === toCurrency)[0].value;
             const result = (fromValue * currencyRate).toFixed(2);
             setResult(result);
-            const date = new Date();
-            const dateString = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
             const data = {
                 username: localStorage.getItem('username'),
                 fromCurrency: fromCurrency,
@@ -26,14 +24,14 @@ function Calculator() {
                 rate: currencyRate,
                 fromValue: fromValue,
                 result: result,
-                date: dateString
             }
-            fetch('http://localhost/backend-gtc/rates.php', {
+            fetch('http://localhost:3005/calculation', {
                 method: 'POST',
-                body: JSON.stringify(data)
-            }).then(response => {
-                response.text().then(text => console.log(text));
-            })
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then();
         }
     }
 

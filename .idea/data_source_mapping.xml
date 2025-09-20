@@ -2,5 +2,13 @@
 <project version="4">
   <component name="DataSourcePerFileMappings">
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/1bc589a3-1008-4553-9203-3fc4a6ad69f3/console.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/1bc589a3-1008-4553-9203-3fc4a6ad69f3/console_1.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/1bc589a3-1008-4553-9203-3fc4a6ad69f3/console_2.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/1bc589a3-1008-4553-9203-3fc4a6ad69f3/console_3.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$PROJECT_DIR$/src/database/create-table-country.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$PROJECT_DIR$/src/database/create-table-currency_conversion.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$PROJECT_DIR$/src/database/insert-into-country.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$PROJECT_DIR$/src/database/insert-into-currency.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
+    <file url="file://$PROJECT_DIR$/src/database/insert-into-rate.sql" value="1bc589a3-1008-4553-9203-3fc4a6ad69f3" />
   </component>
 </project>

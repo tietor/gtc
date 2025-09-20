@@ -17,21 +17,28 @@ function Register() {
                 lastname: lastname,
                 password: password
             }
-            fetch('http://localhost/backend-gtc/user.php', {
+            fetch('http://localhost:3005/register', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify(data)
             }).then(response => {
-                response.text().then(text => {
-                    if (text !== 'Successful') {
-                        setError('Registrierung fehlgeschlagen. Benutzername bereits vergeben.');
-                    } else {
-                        setError('');
-                        setSuccess('Registrierung erfolgreich! Du wirst gleich zum Login weitergeleitet.');
-                        setTimeout(() => {
-                            window.location.href = '/gtc/login';
-                        }, 4000);
-                    }
-                })
+                if (response.ok) {
+                    setSuccess('Registrierung erfolgreich! Du wirst gleich zum Login weitergeleitet.');
+                    setTimeout(() => {
+                        window.location.href = '/gtc/login';
+                    }, 4000);
+                    return;
+                }
+
+                if (response.status === 409) {
+                    setError('Registrierung fehlgeschlagen. Benutzername bereits vergeben.');
+                    return;
+                }
+                if (!response.ok) {
+                    setError('Registrierung fehlgeschlagen.')
+                }
             })
         } else {
             setError('Bitte alle Felder ausfüllen!');

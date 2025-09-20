@@ -1,7 +1,7 @@
 create table currency_conversion
 (
     id            serial unique  not null,
-    date          date           not null,
+    date          DATE NOT NULL DEFAULT CURRENT_DATE,
     from_currency varchar(4)     not null,
     to_currency   varchar(4)     not null,
     exchange_rate decimal(18, 8) not null,

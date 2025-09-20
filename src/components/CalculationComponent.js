@@ -6,7 +6,7 @@ function Calculation() {
     const [calculations, setCalculations] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/backend-gtc/rates.php', {
+        fetch('http://localhost:3005/calculations', {
             method: 'GET'
         })
             .then(response => {
